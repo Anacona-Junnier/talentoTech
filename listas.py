@@ -20,7 +20,7 @@ print(mi_lista)
 mi_lista.append('z')
 print(mi_lista)
 
-#Eliminar un el último elemento
+#Eliminar el último elemento
 mi_lista.pop()
 print(mi_lista)
 
