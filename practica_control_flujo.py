@@ -27,7 +27,10 @@ conocimientoIngles = input('¿Tienes conocimientos en Inglés? \"si\" ó \"no\" 
 print(conocimientoPython)
 print(conocimientoIngles)
 
-if conocimientoPython=='si' and conocimientoIngles=='si':
+#Refactorización
+puedeConducir = conocimientoPython=='si' and conocimientoIngles=='si'
+
+if puedeConducir:
     print('Cumples con los requisitos para postularte')
 elif conocimientoPython=='si':
     print('Para postularte, necesitas tener conocimientos en inglés')
