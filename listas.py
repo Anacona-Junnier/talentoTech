@@ -24,7 +24,7 @@ print(mi_lista)
 mi_lista.pop()
 print(mi_lista)
 
-#Eliminar un elemento en específico
+#Eliminar un elemento en específico, se puede utilizar el método remove()
 mi_lista.pop(0)
 print(mi_lista) 
 
