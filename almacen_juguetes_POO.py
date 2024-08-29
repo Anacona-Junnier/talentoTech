@@ -24,9 +24,9 @@ class AlmacenJuguete:
             if juguete.nombre == nombre:
                 self.inventario.remove(juguete)
                 #return juguete
-                return "Juguete Eliminado"
+                return "Juguete Eliminado" #agregado
         #return None   
-        return "NO se encontro el juguete"
+        return "NO se encontro el juguete" #agregado
         
     def listarJuguetes(self):
         if not self.inventario:
@@ -77,7 +77,7 @@ def main():
         elif opcion == 2:
             nombre = input("Ingrese el nombre del juguete: ")
             resultado = almacen.eliminarJuguete(nombre)
-            print(resultado)
+            print(resultado) #agregado
             # if resultado:
             #     print("eliminado")
             # else:
