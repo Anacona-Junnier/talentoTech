@@ -46,13 +46,16 @@ class Reserva:
                 print(f"ID: {reserva[0]} Nombre: {reserva[1]} Fecha: {reserva[2]} Personas: {reserva[3]} Tipo Tour: {reserva[4]}")
 
     def actualizar_reserva(self, id, numeroPersonas, tipoTour):
-        query = "UPDATE reservas SET personas = %s, tipo_tour = %s WHERE id = %s"
-        self.db.execute_query(query, (numeroPersonas, tipoTour, id))
-        print("Actualización exitosa.")
+        reserva = self.verificar_reserva(id)
+        if not reserva:
+            print("Reserva NO encontrada.")
+        else:
+            query = "UPDATE reservas SET personas = %s, tipo_tour = %s WHERE id = %s"
+            self.db.execute_query(query, (numeroPersonas, tipoTour, id))
+            print(f"Actualización exitosa, {reserva[1]}.")
 
     def eliminar_reserva(self, id):
-        query = "SELECT * FROM reservas WHERE id = %s"
-        reserva = self.db.fetch_query(query, (id,))
+        reserva = self.verificar_reserva(id)
         if not reserva:
             print("Reserva NO encontrada.")
         else:
@@ -61,6 +64,11 @@ class Reserva:
             self.db.execute_query(query, (id,))
             print("Reserva Eliminada.")
             
+    def verificar_reserva(self, id):
+        query = "SELECT * FROM reservas WHERE id = %s"
+        reserva = self.db.fetch_query(query, (id,))
+        return reserva
+
 
 def main():
     db = DataBase()
