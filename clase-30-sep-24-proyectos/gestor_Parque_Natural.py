@@ -85,27 +85,51 @@ def main():
         
         opcion = int(input("Digite la opción: "))
         
-        if opcion == 1:
-            nombre = input("Nombre: ")
-            fecha = input("Fecha: ")
-            numeroPersonas = int(input("Número de personas: "))
-            tipoTour = input("Tipo Tour: ")
-            reserva.agregar_reserva(nombre, fecha, numeroPersonas, tipoTour)
-        elif opcion == 2:
-            reserva.listar_reservas()
-        elif opcion == 3:
-            id = int(input("ID: "))
-            numeroPersonas = int(input("Número de Personas: "))
-            tipoTour = input("Tipo de Tour: ")
-            reserva.actualizar_reserva(id, numeroPersonas, tipoTour)
-        elif opcion == 4:
-            id = int(input("ID: "))
-            reserva.eliminar_reserva(id)
-        elif opcion == 5:
-            print("Saliendo...")
-            break
-        else:
-            print("Opción incorrecta. Intente de nuevo.")
+        # if opcion == 1:
+        #     nombre = input("Nombre: ")
+        #     fecha = input("Fecha: ")
+        #     numeroPersonas = int(input("Número de personas: "))
+        #     tipoTour = input("Tipo Tour: ")
+        #     reserva.agregar_reserva(nombre, fecha, numeroPersonas, tipoTour)
+        # elif opcion == 2:
+        #     reserva.listar_reservas()
+        # elif opcion == 3:
+        #     id = int(input("ID: "))
+        #     numeroPersonas = int(input("Número de Personas: "))
+        #     tipoTour = input("Tipo de Tour: ")
+        #     reserva.actualizar_reserva(id, numeroPersonas, tipoTour)
+        # elif opcion == 4:
+        #     id = int(input("ID: "))
+        #     reserva.eliminar_reserva(id)
+        # elif opcion == 5:
+        #     print("Saliendo...")
+        #     break
+        # else:
+        #     print("Opción incorrecta. Intente de nuevo.")
+        
+        match opcion:
+            case 1:
+                nombre = input("Nombre: ")
+                fecha = input("Fecha: ")
+                numeroPersonas = int(input("Número de personas: "))
+                tipoTour = input("Tipo Tour: ")
+                reserva.agregar_reserva(nombre, fecha, numeroPersonas, tipoTour)
+            case 2:
+                reserva.listar_reservas()
+            case 3:
+                id = int(input("ID: "))
+                numeroPersonas = int(input("Número de Personas: "))
+                tipoTour = input("Tipo de Tour: ")
+                reserva.actualizar_reserva(id, numeroPersonas, tipoTour)
+            case 4:
+                id = int(input("ID: "))
+                reserva.eliminar_reserva(id)
+            case 5:
+                print("Saliendo...")
+                break
+            case _:
+                print("Opción incorrecta. Intente de nuevo.")
+        
     # reserva.db.close_connection()
     db.close_connection()
 
