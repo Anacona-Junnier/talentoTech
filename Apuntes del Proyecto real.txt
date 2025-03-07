@@ -1,0 +1,12 @@
+Un Framework es un marco de trabajo que permite programar con un enfoque, en este caso django nos facilita el diseño y enfoque web que es backend
+Blackend son las funcionalidades
+API es un puente o un intermediario que permite enviar y recibir peticiones desde los frontend y blackend
+Frontend es la parte visual
+REACT es una librería.
+que diferencia un framework de una librería? framework es un kit de herramientas para trabajar un proyecto bajo ciertas reglas, uso menos de librerías, su compatibilidad y define la forma en que se debe desarrollar un proyecto. Librería es una herramienta con una sola utilidad especifica, se es libre de usar las librerías que se deseen en la estructura que quieras, se debe controlar la compatibilidad de cada librería con las demás.
+Gestor de Base de datos: MySQL
+Tipo de Peticiones:
+	GET: obtener información
+	POST: crear 
+	PUT: actualizar
+	DELET: eliminar

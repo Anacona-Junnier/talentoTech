@@ -1,0 +1,20 @@
+--------------Bases de Datos-------------
+Campos = Columnas
+Registros = Filas
+Dato = Celda
+Imagen de lo anterior explicado: C:\Users\juega_zd4vtel\Documents\Programacion_Mision_Tech\Clase-04-07-24 BD\Formato_BD.png
+
+SQL: es un lenguaje para trabajar con bases de datos, algo similar como Python con su sintaxis y MySQL es un programa con interfaz grafica que nos permite gestionar la BD
+
+Cláusulas: 
+	FROM
+	SELECT
+	WHERE
+	ORDER BY
+	GROUP BY
+	HAVING
+
+Comandos de SQL:
+	DLL: CREATE, DROP, ALTER tablas
+	DML: su función es la anipulación de datos, a través de él podemos 	insertar registros, modificar, eliminar INSERT, UPDATE, DELET 	registros
+	

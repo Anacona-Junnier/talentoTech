@@ -1,0 +1,10 @@
+{% if lista_ultimas_preguntas %}
+    <ul>
+    {% for question in lista_ultimas_preguntas %}
+        <!-- <li><a href="/encuestas/{{ question.id }}/">{{ question.question_text }}</a></li> -->
+        <li><a href="{% url 'encuestas:detalle' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Las encuestas no estan disponibles</p>
+{% endif %}
