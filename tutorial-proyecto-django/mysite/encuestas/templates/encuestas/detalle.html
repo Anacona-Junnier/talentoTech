@@ -1,0 +1,34 @@
+<!-- <h1>{{ question.question_text }}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul> -->
+
+<form action="{% url 'encuestas:voto' question.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>{{ question.question_text }}</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Vote">
+</form>
+
+<form action="{% url 'encuestas:voto' question.id %}" method="post"> <!-- usa la etiqueta de plantilla url para general la URL a la que se enviara el formulario. 'encuestas:voto' nombre de la vista, question.id es le identificador de la pregunta -->
+    {% csrf_token %} <!-- Implementacion de seguridad contra falsificacion de solicitud entre sitios web  -->
+    <fieldset> <!-- para agrupar los elementos del formulario -->
+        <legend><h1>{{question.question_text}}</h1></legend> <!-- legend proporciona un titulo para el grupo de campos y h1 para marcar el titulo principal de una pagina -->
+        <!--CONTROL DE MENSAJE DE ERROR-->
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <!--MOSTRAR OPCIONES DE LA PREGUNTA CON BUCLE FOR-->
+        {% for opcion in question.choice_set.all %}
+            <input type="radio" name="opcion" id="opcion{{forloop.counter}}" value="{{opcion.id}}"> <!-- forloop.counter retorna el que iteracion del bucle se encuentra iniciando desde el 1 teniendo un valor inicial id="choice1"   -->
+            <label for="opcion{{forloop.counter}}">{{opcion.choice_text}}</label><br> <!-- muestra el texto con la etiqueta lable al lado del imput de tipo radio -->
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Votar">
+</form>
